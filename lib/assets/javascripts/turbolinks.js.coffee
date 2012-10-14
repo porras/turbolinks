@@ -8,7 +8,7 @@ createDocument = null
 visit = (url) ->
   if browserSupportsPushState
     cacheCurrentPage()
-    reflectNewUrl url
+    # reflectNewUrl url
     fetchReplacement url
   else
     document.location.href = url
@@ -29,7 +29,7 @@ fetchReplacement = (url) ->
       document.location.href = url
     else
       changePage extractTitleAndBody(doc)...
-      reflectRedirectedUrl xhr
+      # reflectRedirectedUrl xhr
       resetScrollPosition()
       triggerEvent 'page:load'
 
